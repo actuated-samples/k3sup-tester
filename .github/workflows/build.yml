@@ -17,7 +17,7 @@ jobs:
           $HOME/.arkade/bin/k3sup install --local --local-path $HOME/.kube/config
       - name: Wait until CoreDNS is ready
         run: |
-          $HOME/.arkade/bin/kubectl rollout status deploy/coredns -n kube-system --timeout=60s
+          $HOME/.arkade/bin/kubectl rollout status deploy/coredns -n kube-system --timeout=300s
       - name: Explore nodes
         run: $HOME/.arkade/bin/kubectl get nodes -o wide
       - name: Explore pods
