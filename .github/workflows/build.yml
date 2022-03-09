@@ -1,0 +1,21 @@
+name: build
+
+on: push
+jobs:
+  my-job:
+    runs-on: self-hosted
+    steps:
+      - name: get arkade
+        run: curl -sLS https://get.arkade.dev | sudo sh
+      - name: get k3sup
+        run: arkade get k3sup
+      - name: get kubectl
+        run: arkade get kubectl
+      - name: Install K3s with k3sup
+        run: |
+          mkdir -p $HOME/.kube/
+          $HOME/.arkade/bin/k3sup install --local --local-path $HOME/.kube/config
+      - name: Explore nodes
+        run: $HOME/.arkade/bin/kubectl get nodes -o wide
+      - name: Explore pods
+        run: $HOME/.arkade/bin/kubectl get pod -A -o wide
