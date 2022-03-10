@@ -1,8 +1,2 @@
-Install K3sup and test it out in a GitHub Action
-
-
-Rebuild with 2GB RAM
-
-with vxlan module
-
+Install K3s with [K3sup](https://k3sup.dev/) and test it out in a GitHub Action
 
