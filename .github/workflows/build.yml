@@ -23,4 +23,3 @@ jobs:
       - name: Explore pods
         run: $HOME/.arkade/bin/kubectl get pod -A -o wide
 
-
