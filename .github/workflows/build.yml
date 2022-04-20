@@ -3,7 +3,7 @@ name: build
 on: push
 jobs:
   my-job:
-    runs-on: actuated-aarch64
+    runs-on: actuated
     steps:
       - name: get arkade
         run: curl -sLS https://get.arkade.dev | sudo sh
